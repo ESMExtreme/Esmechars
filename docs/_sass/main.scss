@@ -1,11 +1,13 @@
-
+body {
+  margin-top: 35px;
+}
   nav {
     width: 100vw;
     height: 35px;
     z-index: 30;
     position: fixed;
     top: 0px;
-    background-image: url('{{ site.baseurl }}/assets/img/navback.jpg');
+    background-image: url('../img/navback.jpg');
     border-bottom: rgba(0, 0, 0, 0.5) 2px solid;
     filter:brightness(50%);
     transform: scale(1);
@@ -17,8 +19,10 @@
   .navbutton {
     width: 100px;
     height: 35px;
+    display: flex;
     align-items: center;
     text-align: center;
+    justify-content: center;
     margin-left: 5px;
     padding-left: 45px;
     padding-right: 45px;
@@ -43,6 +47,4 @@
     transition: 0.2s;
     
   }
-  body {
-    margin-top: 35px;
-  }
+ 
