@@ -1,0 +1,48 @@
+
+  nav {
+    width: 100vw;
+    height: 35px;
+    z-index: 30;
+    position: fixed;
+    top: 0px;
+    background-image: url('{{ site.baseurl }}/assets/img/navback.jpg');
+    border-bottom: rgba(0, 0, 0, 0.5) 2px solid;
+    filter:brightness(50%);
+    transform: scale(1);
+    /*  adapter */
+    transform-origin: top right;
+    justify-content: left;
+    display: flex;
+  }
+  .navbutton {
+    width: 100px;
+    height: 35px;
+    align-items: center;
+    text-align: center;
+    margin-left: 5px;
+    padding-left: 45px;
+    padding-right: 45px;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  nav audio {
+    justify-self: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 35px;
+  }
+  nav audio:hover {
+    margin-top: 2px;
+    transition: 0.2s;
+  }
+  .navbutton:hover {
+    background-color: rgba(109, 109, 109, 0.8);
+    height: 40px;
+    transition: 0.2s;
+    
+  }
+  body {
+    margin-top: 35px;
+  }

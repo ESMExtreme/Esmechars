@@ -22,17 +22,20 @@ title: EsmeCharacters
 email: pepej.miszczu@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Awesome description
-baseurl: "/esmechars/" # the subpath of your site, e.g. /blog
+#baseurl: "/esmechars" # the subpath of your site, e.g. /blog
 domain: esmextreme.github.io
-url: "https://esmextreme.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://esmextreme.github.io/esmechars" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  ESMExtreme
 
 # Build settings
-theme: minima
+#theme: minima
 plugins:
   - jekyll-feed
-
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
