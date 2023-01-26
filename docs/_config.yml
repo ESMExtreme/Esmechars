@@ -28,8 +28,7 @@ url: "https://esmextreme.github.io/esmechars" # the base hostname & protocol for
 github_username:  ESMExtreme
 
 # Build settings
-theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "dark"
+theme: minima
 plugins:
   - jekyll-feed
 defaults:
