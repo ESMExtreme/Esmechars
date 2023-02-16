@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "pl-PL" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content" style="	background: url(assets/img/{{page.background}}) no-repeat; -webkit-background-size: cover;
+    -moz-background-size: cover; -o-background-size: cover; background-size: cover; float:left; justify-content: left;">
+        {{ content }}
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

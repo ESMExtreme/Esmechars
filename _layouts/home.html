@@ -1,34 +1,27 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "pl-PL" }}">
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+  {%- include head.html -%}
 
-  {{ content }}
+  <body>
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+    {%- include header.html -%}
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
+    <main class="page-content" aria-label="Content" style="	background: url(assets/img/{{page.background}}) no-repeat; -webkit-background-size: cover;
+    -moz-background-size: cover; -o-background-size: cover; background-size: cover; float:left; justify-content: left;">
+      <div class="wrapper">
+        {{ content }}
+        <div class="last-character">
+          {% for my_page in site.pages %}
+            {% if my_page.dir == '/characters/' %}
+              <a class="" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </main>
 
-</div>
+  </body>
+
+</html>

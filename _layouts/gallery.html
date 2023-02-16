@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "pl-PL" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content" style="	background: url(../assets/img/{{page.background}}) no-repeat; -webkit-background-size: cover;
+    -moz-background-size: cover; -o-background-size: cover; background-size: cover; float:left; justify-content: left;">
+      <div class="wrapper">
+        {{ content }}
+        <div class="characters">
+          {% for my_page in site.pages %}
+            {% if my_page.dir == '/characters/' %}
+              <a href="{{ my_page.url | relative_url }}" style="background: url(../assets/img/avg_ac15_5.png) no-repeat; -webkit-background-size: cover;">
+                <img src="../assets/img/gallery/{{my_page.folder}}/{{my_page.gallery_image}}" style="{{my_page.gallery_image_params}}">
+                <img src="../assets/img/gallery/over.png">
+                <div class="text">{{ my_page.title | escape }}</div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
+    </main>
+
+  </body>
+
+</html>
