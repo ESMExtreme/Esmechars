@@ -1,11 +1,12 @@
 ---
 layout: oldcharacter
 title: Jikko
-hide_in_navbar: 1
+server: Ganshev
 folder: jikko
 gallery_image: ada.jpg
 gallery_image_params: "object-fit: none; object-position: 25% 5%"
 background: avg_ac15_5.png
+order: 1
 ---
 <div class="layout" id="up">
     <div class="pos-1">

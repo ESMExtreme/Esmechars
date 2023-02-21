@@ -9,19 +9,30 @@
 
     <main class="page-content" aria-label="Content" style="	background: url(../assets/img/{{page.background}}) no-repeat; -webkit-background-size: cover;
     -moz-background-size: cover; -o-background-size: cover; background-size: cover; float:left; justify-content: left;">
-      <div class="wrapper">
+      <div class="wrapper" >
         {{ content }}
-        <div class="characters">
-          {% for my_page in site.pages %}
-            {% if my_page.dir == '/characters/' %}
-              <a href="{{ my_page.url | relative_url }}" style="background: url(../assets/img/avg_ac15_5.png) no-repeat; -webkit-background-size: cover;">
-                <img src="../assets/img/gallery/{{my_page.folder}}/{{my_page.gallery_image}}" style="{{my_page.gallery_image_params}}">
-                <img src="../assets/img/gallery/over.png">
-                <div class="text">{{ my_page.title | escape }}</div>
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
+        {% for server in site.data.servers %}
+          <div class="{{server}}">
+            <h2 class="server-title">{{server}}</h2>
+            <div class="characters">
+            {% assign sorted_pages = site.pages | sort:"order" %}
+            {% for my_page in sorted_pages %}
+              {% if my_page.dir == '/characters/' and my_page.server == server %}
+                <a href="{{ my_page.url | relative_url }}" style="background: url(../assets/img/avg_ac15_5.png) no-repeat; -webkit-background-size: cover; background-size: cover;">
+                  <img src="../assets/img/gallery/{{my_page.folder}}/{{my_page.gallery_image}}" style="{{my_page.gallery_image_params}}">
+                  <img src="../assets/img/gallery/over.png">
+                  <div class="text">{{ my_page.title | escape }}</div>
+                  {% assign exist = my_page %}
+                </a>
+              {% endif %}
+            {% endfor %}
+            </div>
+          </div>
+          {% unless exist %}
+            {% break %}
+          {% endunless %}
+        {% endfor %}
+          
 
       </div>
     </main>

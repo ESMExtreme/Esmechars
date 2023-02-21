@@ -11,10 +11,15 @@
     -moz-background-size: cover; -o-background-size: cover; background-size: cover; float:left; justify-content: left;">
       <div class="wrapper">
         {{ content }}
-        <div class="last-character">
-          {% for my_page in site.pages %}
+        <div class="characters">
+          {% assign sorted_pages = site.pages | sort:"order" | reverse %}
+          {% for my_page in sorted_pages %}
             {% if my_page.dir == '/characters/' %}
-              <a class="" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            <a href="{{ my_page.url | relative_url }}" style="background: url(assets/img/avg_ac15_5.png) no-repeat; -webkit-background-size: cover; background-size: cover;">
+              <img src="assets/img/gallery/{{my_page.folder}}/{{my_page.gallery_image}}" style="{{my_page.gallery_image_params}}">
+              <img src="assets/img/gallery/over.png">
+              <div class="text">{{ my_page.title | escape }}</div>
+              </a>
               {% break %}
             {% endif %}
           {% endfor %}

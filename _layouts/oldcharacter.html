@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "pl-PL" }}">
+<html lang="{{ page.lang | default: site.lang | default: "pl-PL" }}" style="overflow: hidden;">
 
   {%- include head.html -%}
 
-  <body>
+  <body style="overflow: hidden;">
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content" style="	background: url(../assets/img/{{page.background}}) no-repeat; -webkit-background-size: cover;
+    <main class="page-content" aria-label="Content" style="	background: url(../assets/img/{{page.background}}) no-repeat; -webkit-background-size: fill;
     -moz-background-size: cover; -o-background-size: cover; background-size: cover; 
 	width: 100%;
-	height: 100vh;
+	max-height: 100vh;
 	z-index: 0.1;
 	justify-content: center;
 	display: flex;
 	position: relative;
+  overflow: scroll;
 	scroll-behavior: smooth;
   padding-bottom: 50px;">
         {{ content }}
