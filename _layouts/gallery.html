@@ -8,8 +8,8 @@
     {%- include header.html -%}
 
     <main class="page-content" aria-label="Content" style="	background: url(../assets/img/{{page.background}}) no-repeat; -webkit-background-size: cover;
-    -moz-background-size: cover; -o-background-size: cover; background-size: cover; float:left; justify-content: left;">
-      <div class="wrapper" >
+    -moz-background-size: cover; -o-background-size: cover; background-size: cover; float:left; justify-content: left; padding-top: 50px;">
+      <div class="wrapper" style="padding-top: 10px;">
         {{ content }}
         {% for server in site.data.servers %}
           <div class="{{server}}">

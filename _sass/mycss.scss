@@ -3,11 +3,20 @@ html {
 	margin: 0px;
 	scroll-behavior: smooth;
 }
+* {
+	text-decoration: none;
+}
+*:visited {
+	color: $brand-color;
+}
 body {
 	margin: 0px;
 }
 a:hover {
 	filter: brightness(70%);
+}
+main {
+	padding-top: 50px;
 }
 header {
 	position: fixed;
@@ -132,9 +141,26 @@ main .wrapper {
   OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD OLD 
 ================================================== 
 */
-main {
-	overflow: visible;
-}
+/* Works on Firefox */
+* {
+	scrollbar-width: 15px;
+	scrollbar-color: rgba(63, 63, 63, 0.7) rgba(200,200,200,0.5);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+	width: 15px
+  }
+  
+  *::-webkit-scrollbar-track {
+	background: rgba(100,100,100);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+	background-color: rgb(200,200,200);
+	border-radius: 20px;
+	border: 3px solid rgb(150,150,150);
+  }
 .layout hr {
 	height: 2px;
   	background-color: rgba(225,225,225,0.2);
@@ -421,3 +447,21 @@ main {
 	margin-bottom: 10px;
 	
 }
+
+.Goldenstyle {
+	position: absolute;
+	top: -50px;
+	left: 0;
+	display: flex;
+	height: auto;
+	overflow-x: hidden;
+}
+
+.Goldenstyle .Goldenstyle-page  {overflow-x: visible;
+	display: flex;
+	scroll-behavior: smooth;
+	flex-direction:row;
+   width: 100vw;
+   height: 100%;
+   scroll-snap-type: x mandatory;
+/*sticky*/}

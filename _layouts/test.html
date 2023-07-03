@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "pl-PL" }}" style="overflow-x: hidden;">
+
+  {%- include head.html -%}
+
+  <body>
+    {%- include header.html -%}
+    <main class="Goldenstyle" style="overflow-x: hidden;">
+      {% for database in site.data[page.pagedata] %}
+        <div class="Goldenstyle-page-{{database.page}} Goldenstyle-page" aria-label="Content" style="background: url(../assets/img/{{database.pagebackimage}}) no-repeat ; -webkit-background-size: fill;
+        -moz-background-size: cover; -o-background-size: cover; background-size: cover; 
+      scroll-behavior: smooth;" id="Goldenstyle-page-{{database.page}}">
+          <div class="layout">
+            <h2 class="server-title">{{database.title}}</h2>
+            <p>{{database.content}}</p>
+            <div class="darken"></div>
+          </div>
+
+         </div>
+      {%endfor%}
+    </main>
+
+  </body>
+
+</html>
